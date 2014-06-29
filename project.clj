@@ -24,6 +24,6 @@
    :dev
    {:dependencies [[ring-mock "0.1.5"] [ring/ring-devel "1.2.1"]]
     :env {:db-server "localhost"
-          :db-name "my-lists"
-          :db-user "my-lists-user"
-          :db-password "my-lists-pass"}}})
+          :db-name "my_lists"
+          :db-user "my_lists_user"
+          :db-password "my_lists_pass"}}})

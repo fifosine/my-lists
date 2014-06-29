@@ -3,7 +3,7 @@
             [environ.core :refer [env]]))
 
 (def db {:subprotocol "postgresql"
-         :subname (str "//" (env :server-name) "/" (env :database-name))
-         :user (env :user)
-         :password (env :password)
+         :subname (str "//" (env :db-server) "/" (env :db-name))
+         :user (env :db-user)
+         :password (env :db-password)
          })
