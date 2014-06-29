@@ -1,8 +1,7 @@
 (ns my-lists.handler
   (:require [compojure.core :refer [defroutes routes]]
-            [ring.middleware.resource :refer [wrap-resource]]
-            [ring.middleware.file-info :refer [wrap-file-info]]
-            [hiccup.middleware :refer [wrap-base-url]]
+            [ring.middleware.session.memory :refer [memory-store]]
+            [noir.session :as session]
             [compojure.handler :as handler]
             [compojure.route :as route]
             [my-lists.routes.home :refer [home-routes]]))
@@ -20,6 +19,7 @@
 (def app
   (-> (routes home-routes app-routes)
       (handler/site)
-      (wrap-base-url)))
+      (session/wrap-noir-session {:store (memory-store)})))
+
 
 
